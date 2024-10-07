@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📸 AI Skills Advanced LoRA's</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search images...">
+            <button id="search-button">Search</button>
+        </div>
+        <button id="upload-button" class="primary-button">+ Upload New Image</button>
+    </header>
+    <main id="image-gallery"></main>
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Upload New Image</h2>
+            <form id="upload-form">
+                <input type="file" id="image-file" accept="image/*" required>
+                <input type="text" id="image-title" placeholder="Title" required>
+                <textarea id="image-prompt" placeholder="Prompt" required></textarea>
+                <input type="text" id="image-tags" placeholder="Tags (comma-separated)" required>
+                <input type="text" id="image-author" placeholder="Author" required>
+                <button type="submit" class="primary-button">Upload</button>
+            </form>
+        </div>
+    </div>
+    <div id="image-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="image-detail-content"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
